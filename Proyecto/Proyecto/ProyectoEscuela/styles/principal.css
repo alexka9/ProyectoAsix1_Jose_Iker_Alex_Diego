@@ -1,0 +1,391 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-image: url(../img/principal.jpeg);
+    background-color: #00ffff;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+@media (max-width: 768px) {
+  body {
+      background-attachment: scroll; /* Cambia a desplazamiento en dispositivos más pequeños para mejorar la experiencia de usuario */
+  }
+}
+
+header {
+    background-color: rgba(128, 128, 128, 0.5); /* Fondo gris translúcido */
+    padding: 20px; /* Espacio interior */
+    display: flex; /* Activar el modelo de caja flexible */
+    justify-content: space-between; /* Distribuir el espacio entre los elementos hijos */
+    align-items: center; /* Centrar verticalmente los elementos hijos */
+}
+
+.columnas {
+    display: flex; /* Activar el modelo de caja flexible para las columnas */
+    justify-content: space-between; /* Distribuir el espacio entre las columnas */
+    /*width: 100%; /* Ocupar todo el ancho disponible */
+}
+
+.columna-1,
+.columna-3 {
+    width: 30%;
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco con un 80% de opacidad */
+    padding: 10px; /* Espacio interior */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 0 10px; /* Margen horizontal de 10px */
+    
+}
+
+
+.columna-2 img {
+  width: 40%;
+    background-color: #fff; /* Color de fondo blanco */
+    padding: 10px; /* Espacio interior */
+    border-radius: 5px; /* Borde redondeado */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    margin: 0 10px; /* Margen horizontal de 10px */
+}
+
+
+.calendario {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-gap: 1px;
+    background-color: #f3f3f3;
+    padding: 10px;
+  }
+  
+  .dia {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .dia:hover {
+    background-color: #f3f3f3;
+  }
+  
+  #eventos {
+    margin-top: 10px;
+  }
+
+  #popup {
+    position: fixed;
+    background-color: white;
+    border: 1px solid black;
+    padding: 10px;
+    z-index: 1000;
+  }
+
+  .dia-evento {
+    background-color: #add8e6; /* Azul claro */
+    color: #000; /* Color de texto negro */
+}
+
+
+.titulo {
+    text-align: center;
+    color: #ffffff; /* Blanco */
+    font-size: 48px; /* Tamaño grande de fuente */
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada */
+    /* Estilos adicionales para mejorar la estética */
+    padding: 20px 40px; /* Espaciado interior */
+    border-radius: 10px; /* Borde redondeado */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra alrededor del elemento */
+    background-color: rgba(128, 128, 128, 0.5); /* Fondo sombreado de color gris translúcido */
+}
+
+
+/* Estilo básico para la barra de navegación */
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilo de los elementos de la barra de navegación */
+.navbar li {
+    margin-right: 20px; /* Espacio entre elementos */
+}
+
+/* Estilo de los elementos de la barra de navegación */
+/* Estilo de los elementos de la barra de navegación */
+.navbar a {
+    text-decoration: none;
+    color: #eaeaea; /* Color de texto por defecto */
+    font-size: 18px; /* Tamaño de fuente */
+    font-weight: bold; /* Hacer el texto más grueso */
+    transition: color 0.2s, background-color 0.2s; /* Transición suave para el cambio de color */
+    padding: 8px 12px; /* Ajuste el relleno para dar espacio alrededor del texto */
+    border-radius: 5px; /* Borde redondeado */
+}
+
+/* Estilo al pasar el ratón sobre los enlaces */
+.navbar a:hover {
+    color: #5e5d5d; /* Cambiar el color del texto a blanco al pasar el ratón */
+    background-color: rgba(255, 255, 255, 0.3); /* Fondo blanco translúcido */
+}
+
+/* Estilo al hacer clic en los enlaces */
+.navbar a:active {
+    color: #555; /* Cambio de color al hacer clic */
+}
+
+.navbar ul li a:hover {
+    background-color: rgba(200, 200, 200, 0.7); /* Fondo grisáceo transparente al pasar el cursor */
+    transform: scale(1.1); /* Aumentar el tamaño */
+}
+
+.login {
+    text-align: center;
+    margin-top: 20px;
+    
+  }
+  
+  .login a {
+    display: inline-block;
+    padding: 15px 30px;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 10px;
+    background-color: #333333; /* Gray background */
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2); /* Add a subtle shadow */
+    font-weight: bold; /* Make the text bold */
+    font-size: 18px; /* Increase the font size */
+    letter-spacing: 1px; /* Add some letter spacing */
+    border: none; /* Remove the border */
+  }
+  
+  .login a:hover {
+    background-color: #222222; /* Darker gray background on hover */
+    transform: scale(1.05); /* Slightly increase the size */
+  }
+  
+  .login a:focus {
+    outline: none; /* Remove the focus outline */
+    box-shadow: 0px 0px 0px 2px rgba(0, 0, 0, 0.2); /* Add a subtle focus shadow */
+  }
+  
+  .login a:active {
+    background-color: #222222; /* Darker gray background on active */
+    transform: translateY(2px); /* Add a subtle push effect */
+  }
+  
+  .login a:disabled {
+    background-color: #c0c0c0; /* Grayed out background */
+    color: #666666; /* Grayed out text */
+    cursor: not-allowed; /* Disable the cursor */
+  }
+
+  .columna-2 {
+    width: 40%; /* Porcentaje de anchura deseado */
+    height: 300px;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.8); /* Blanco con un 80% de opacidad */
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    overflow: hidden;
+  }
+  
+
+
+
+.carousel {
+    height: 400px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+  }
+  
+  .carousel-inner {
+    height: 100%;
+  }
+  
+  .carousel-item {
+    height: 100%;
+  }
+  
+  .carousel-item img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .carousel-indicators {
+    bottom: 20px; /* Ajusta la distancia de las indicadores desde abajo */
+  }
+  
+  .carousel-indicators li {
+    background-color: #6c757d;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+  }
+  
+  .carousel-control-prev,
+  .carousel-control-next {
+    background-color: rgba(0, 0, 0, 0.25);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    bottom: 10px; /* Ajusta la distancia desde abajo */
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 20px;
+    height: 20px;
+  }
+  
+ 
+/* Estilo para el acordeón */
+#accordion {
+    margin-top: 20px;
+  }
+  
+  /* Estilo para cada tarjeta del acordeón */
+  .card {
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
+  }
+  
+  /* Estilo para el encabezado de la tarjeta */
+  .card-header {
+    background-color: #f8f9fa;
+  }
+  
+  /* Estilo para el botón en el encabezado */
+  .card-header button {
+    color: #333;
+    font-weight: bold;
+    width:inherit;
+    text-align: left;
+  }
+  
+  /* Estilo para el cuerpo de la tarjeta */
+  .card-body {
+    padding: 10px;
+  }
+  
+
+  .contenido-creativo {
+    background-color: #f8f9fa; /* Color de fondo */
+    padding: 40px; /* Espacio interno */
+    border-radius: 10px; /* Bordes redondeados */
+    margin-top: 40px; /* Margen superior */
+}
+
+.contenido-creativo h2 {
+    color: #333; /* Color del título */
+    font-size: 24px; /* Tamaño del título */
+    margin-bottom: 20px; /* Margen inferior */
+}
+
+.contenido-creativo p {
+    color: #666; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea */
+    margin-bottom: 30px; /* Margen inferior */
+}
+
+.actividades {
+    display: flex; /* Mostrar las actividades en fila */
+    justify-content: space-between; /* Distribuir el espacio entre las actividades */
+}
+
+.actividad {
+    flex: 0 1 30%; /* Tamaño flexible para las actividades */
+    border-radius: 10px; /* Bordes redondeados */
+    overflow: hidden; /* Ocultar el desbordamiento */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    transition: transform 0.6s ease; /* Transición suave */
+}
+
+.actividad:hover {
+    transform: translateY(-10px); /* Efecto de levantamiento al pasar el ratón */
+}
+
+.actividad img {
+    width: 100%; /* Ancho completo */
+    height: auto; /* Altura automática */
+    border-radius: 10px 10px 0 0; /* Bordes redondeados solo arriba */
+}
+
+.actividad h3 {
+    color: #333; /* Color del título */
+    font-size: 20px; /* Tamaño del título */
+    margin: 20px 0; /* Margen arriba y abajo */
+    text-align: center; /* Alineación centrada */
+}
+
+.actividad p {
+    color: #666; /* Color del texto */
+    font-size: 16px; /* Tamaño del texto */
+    line-height: 1.6; /* Altura de línea */
+    padding: 0 20px; /* Relleno horizontal */
+    text-align: justify; /* Alineación justificada */
+}
+
+@media only screen and (max-width: 700px){
+  body {
+    height: 50vh;
+  }
+
+  a {
+    width: 100%;
+  }
+
+  li{
+    width: 100%;
+    text-align: center;
+  }
+  
+  .columnas {
+    flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
+  }
+
+  .columna-1, .columna-2, .columna-3 {
+    min-width: 100%; /* Cada columna ocupa el 100% del ancho */
+
+  }
+ .columna-2{
+  margin: 2%;
+ }
+
+  .actividad {
+    min-width: 100%; /* Cada columna ocupa el 100% del ancho disponible */
+  }
+  
+  .actividades {
+    flex-direction: column; /* Las columnas se apilan verticalmente en pantallas pequeñas */
+  }
+
+}
+  
+
+
+
+
+
+
+
+
+
+
+
